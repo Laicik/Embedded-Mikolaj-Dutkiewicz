@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+FILE_NAME=$1 #Parameter with file name 
+
+if [ "$FILE_NAME" == "" ]; then
+    FINAL_FILE_NAME="data.txt"
+else
+    FINAL_FILE_NAME=$FILE_NAME
+fi
+
+now=$(date)
+
+
+echo "Current date: $now"
+
+cat << EOF > $FINAL_FILE_NAME
+$now
+EOF
+
+
+exit 0
